@@ -71,7 +71,7 @@ public class MisDatos extends AppCompatActivity implements Asynchtask{
             map.put("sentencia", "" +
                     "SELECT  nombres, apellidos, cedula, tipo, usuario, correo\n" +
                     "\tFROM public.usuario where id_usuario = "+id);
-            SOAPWork dd = new SOAPWork("http://"+IP_SERVIDOR+":"+PUERTO+"/Smart_Meter/ws_Procesar?WSDL", map, this, (Asynchtask) this);
+            SOAPWork dd = new SOAPWork("http://"+IP_SERVIDOR+":"+PUERTO+"/Smart_Meter_WS/ws_Procesar?WSDL", map, this, (Asynchtask) this);
             dd.setMethod_name("Obtener");
             dd.execute();
         }
@@ -94,7 +94,7 @@ public class MisDatos extends AppCompatActivity implements Asynchtask{
                     "usuario='"+inputUserN.getText()+"', " +
                     "correo='"+inputCorreo.getText()+"'\n" +
                     "\tWHERE id_usuario="+id);
-            SOAPWork dd = new SOAPWork("http://"+IP_SERVIDOR+":"+PUERTO+"/Smart_Meter/ws_Procesar?WSDL", map, this, (Asynchtask) this);
+            SOAPWork dd = new SOAPWork("http://"+IP_SERVIDOR+":"+PUERTO+"/Smart_Meter_WS/ws_Procesar?WSDL", map, this, (Asynchtask) this);
             dd.setMethod_name("procesar");
             dd.execute();
         }

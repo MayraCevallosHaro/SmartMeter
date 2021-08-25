@@ -43,7 +43,7 @@ public class Home extends AppCompatActivity implements Asynchtask{
         try
         {
             map.put("sentencia", "select comprobar_usuarioP('"+inputUser.getText()+"','"+inputPassword.getText()+"')");
-            SOAPWork dd = new SOAPWork("http://"+IP_SERVIDOR+":"+PUERTO+"/Smart_Meter/ws_Procesar?WSDL", map, this, (Asynchtask) this);
+            SOAPWork dd = new SOAPWork("http://"+IP_SERVIDOR+":"+PUERTO+"/Smart_Meter_WS/ws_Procesar?WSDL", map, this, (Asynchtask) this);
             dd.setMethod_name("consultar");
             dd.execute();
         }
@@ -65,24 +65,23 @@ public class Home extends AppCompatActivity implements Asynchtask{
             Toast.makeText(getApplicationContext(), "Resultado: "+result, Toast.LENGTH_LONG).show();
             SharedPreferences prefs = getSharedPreferences("shared_login_data", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = prefs.edit();
-            String [] data = result.split("-");
+            String [] data = result.trim().split("-");
             editor.putString("user", data[0]);
             editor.putString("id", data[1]);
-
-            //editor.putString("tipo",data[4]);
+            editor.putString("tipo",data[2]);
 
             editor.commit();
-            //if(data[4].equals("Adm"))
-            //{
-               // Intent intent = new Intent(this, MenuAdmi.class);
-               // startActivity(intent);
-               // this.finish();
+            if(data[2].equals("Adm"))
+            {
+               Intent intent = new Intent(this, MenuAdmi.class);
+               startActivity(intent);
+               this.finish();
 
-           // }else{
+           }else{
                 Intent intent = new Intent(this, Menu.class);
                 startActivity(intent);
-                this.finish();
-            //}
+                this.finish(); }
+
 
 
         }
