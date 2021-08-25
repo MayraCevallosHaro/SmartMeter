@@ -37,7 +37,6 @@ public class Dispositivos extends AppCompatActivity implements Asynchtask{
     EditText inputObservacion;
     TextView textView19;
 
-    ArrayList<String> paises;
     ListView lstDiaps;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
