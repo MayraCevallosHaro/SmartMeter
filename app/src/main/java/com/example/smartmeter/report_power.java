@@ -15,8 +15,11 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.smartmeter.Modelo.Dispositivo;
+import com.example.smartmeter.Modelo.ReporteConsumo;
 import com.example.smartmeter.WSSoap.SOAPWork;
 import com.example.smartmeter.WebServices.Asynchtask;
 import com.lowagie.text.Document;
@@ -34,14 +37,19 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import Adapter.AdapterConsumo;
+import Adapter.AdapterDisp;
 
 public class report_power extends AppCompatActivity implements Asynchtask{
     String id;
     Button btnGenerar;
     String NOMBRE_DIRECTORIO = "MisPDFs";
     String NOMBRE_DOCUMENTO = "MiPDF.pdf";
+    ListView lswResporte;
     JSONArray JSONlistaConsumo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +57,7 @@ public class report_power extends AppCompatActivity implements Asynchtask{
         setContentView(R.layout.activity_report_power);
 
         btnGenerar = findViewById(R.id.btnGenerar);
-
+        lswResporte =findViewById(R.id.listlistad);
 
 
         SharedPreferences prefs = getSharedPreferences("shared_login_data",   Context.MODE_PRIVATE);
@@ -175,6 +183,10 @@ public class report_power extends AppCompatActivity implements Asynchtask{
     @Override
     public void processFinish(String result) throws JSONException {
          JSONlistaConsumo =  new JSONArray(result);
+        ArrayList<ReporteConsumo> lstrconsumo = new ArrayList<ReporteConsumo> ();
 
+        lstrconsumo = ReporteConsumo.JsonObjectsBuild(JSONlistaConsumo);
+        AdapterConsumo adapatorUsuario = new AdapterConsumo(report_power.this, lstrconsumo);
+        lswResporte.setAdapter(adapatorUsuario);
     }
 }

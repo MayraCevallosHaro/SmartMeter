@@ -12,7 +12,7 @@ import java.sql.Statement;
 
 public class clsConexionBd {
     //public static String IP_SERVIDOR = "192.168.100.5";
-    public static String IP_SERVIDOR = "192.168.100.5";
+    public static String IP_SERVIDOR = "192.168.100.203";
     public static String PUERTO="8080";
     public Connection connection;
     private boolean okConnection;

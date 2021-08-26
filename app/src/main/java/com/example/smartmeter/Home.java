@@ -58,18 +58,14 @@ public class Home extends AppCompatActivity implements Asynchtask{
     @Override
     public void processFinish(String result) throws JSONException {
 // Aqui es donde validas eso ... en result te viene el resultado de la bd
-
-        if (result.equals("Error"))
-            Toast.makeText(getApplicationContext(), "Resultado: Usuario Incorrecto "+result, Toast.LENGTH_LONG).show();
-        else {
             Toast.makeText(getApplicationContext(), "Resultado: "+result, Toast.LENGTH_LONG).show();
+             if (result.split("-").length>=3) {
             SharedPreferences prefs = getSharedPreferences("shared_login_data", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = prefs.edit();
             String [] data = result.trim().split("-");
             editor.putString("user", data[0]);
             editor.putString("id", data[1]);
             editor.putString("tipo",data[2]);
-
             editor.commit();
             if(data[2].equals("Adm"))
             {
