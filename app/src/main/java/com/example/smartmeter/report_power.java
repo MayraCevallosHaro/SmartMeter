@@ -17,7 +17,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.smartmeter.Modelo.Dispositivo;
 import com.example.smartmeter.WSSoap.SOAPWork;
 import com.example.smartmeter.WebServices.Asynchtask;
 import com.lowagie.text.Document;

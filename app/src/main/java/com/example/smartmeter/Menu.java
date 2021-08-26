@@ -36,28 +36,25 @@ public class Menu extends AppCompatActivity  implements Asynchtask{
 
     public void consumo(View view)
     {
-        Intent intent = new Intent(this, Consumo.class);
+        Intent intent = new Intent(this, report_power.class);
         startActivity(intent);
-        this.finish();
     }
     public void datos(View view)
     {
         Intent intent = new Intent(this, MisDatos.class);
         startActivity(intent);
-        this.finish();
+
     }
     public void report(View view)
     {
-        Intent intent = new Intent(this, report_power.class);
+        Intent intent = new Intent(this, Consumo.class);
         startActivity(intent);
-        this.finish();
     }
 
     public void dispositivos(View view)
     {
         Intent intent = new Intent(this, Dispositivos.class);
         startActivity(intent);
-        this.finish();
     }
 
     public void cerrar(View view)
@@ -83,6 +80,5 @@ public class Menu extends AppCompatActivity  implements Asynchtask{
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        this.finish();
     }
 }

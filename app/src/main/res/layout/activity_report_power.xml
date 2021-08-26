@@ -5,6 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/btnGenerar"
+        android:layout_width="318dp"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button"
+        android:text="Generar Reporte"
+        android:textColor="#FFFF"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listlistad"
+        app:layout_constraintVertical_bias="0.234"
+        tools:ignore="MissingConstraints" />
+
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="71dp"
@@ -24,7 +42,7 @@
         app:layout_constraintHorizontal_bias="0.706"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/report" />
+        app:srcCompat="@drawable/consumol" />
 
     <View
         android:id="@+id/divider6"
@@ -40,17 +58,29 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/btnGenerar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="464dp"
-        android:text="Button"
+    <ListView
+        android:id="@+id/listlistad"
+        android:layout_width="316dp"
+        android:layout_height="268dp"
+        android:layout_marginBottom="196dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="@+id/divider6"
+        app:layout_constraintVertical_bias="0.682"
+        tools:ignore="MissingConstraints">
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/lblListado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Listado de Consumo por Usuario"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/listlistad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -75,12 +75,11 @@ public class Home extends AppCompatActivity implements Asynchtask{
             {
                Intent intent = new Intent(this, MenuAdmi.class);
                startActivity(intent);
-               this.finish();
 
            }else{
                 Intent intent = new Intent(this, Menu.class);
                 startActivity(intent);
-                this.finish(); }
+            }
 
 
 
@@ -91,6 +90,5 @@ public class Home extends AppCompatActivity implements Asynchtask{
     {
         Intent intent = new Intent(this, Registro.class);
         startActivity(intent);
-        this.finish();
     }
 }
