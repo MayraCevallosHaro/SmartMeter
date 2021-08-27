@@ -19,7 +19,10 @@ public class WebService extends AsyncTask<String, Long, String> {
     //Variable con los datos para pasar al web service
     private Map<String, String> datos;
     //Url del servicio web
-    private String url= "http://"+IP_SERVIDOR+":8080/Smart_Meter_WS/";
+
+    //private String url= "http://"+IP_SERVIDOR+":8080/Smart_Meter_WS/";
+
+    private String url= "https://aplicaciones.uteq.edu.ec/Smart_Meter/";
 
     //Actividad para mostrar el cuadro de progreso
     private Context actividad;

@@ -12,7 +12,7 @@ import java.sql.Statement;
 
 public class clsConexionBd {
     //public static String IP_SERVIDOR = "192.168.100.5";
-    public static String IP_SERVIDOR = "192.168.100.203";
+    public static String IP_SERVIDOR = "192.168.100.5";
     public static String PUERTO="8080";
     public Connection connection;
     private boolean okConnection;
@@ -30,7 +30,7 @@ public class clsConexionBd {
                 Class.forName("org.postgresql.Driver");
                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);
-                connection = DriverManager.getConnection("jdbc:postgresql://"+IP_SERVIDOR+":8080/Smart_Meter_WS","postgres", "123456");
+                connection = DriverManager.getConnection("jdbc:postgresql://"+IP_SERVIDOR+":80/Smart_Meter_WS","postgres", "123456");
                 okConnection = connection.isValid(1000);
                 System.out.println(okConnection ? "TEST OK" : "TEST FAIL");
                 ok = okConnection ? "OK" : "TEST FAIL";

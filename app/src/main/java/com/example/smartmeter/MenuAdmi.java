@@ -55,7 +55,7 @@ public class MenuAdmi extends AppCompatActivity {
         try
         {
             map.put("sentencia", "Borrar");
-            SOAPWork dd = new SOAPWork("http://"+IP_SERVIDOR+":"+PUERTO+"/Smart_Meter_WS/ws_Procesar?WSDL", map, this, (Asynchtask) this);
+            SOAPWork dd = new SOAPWork("http://"+IP_SERVIDOR+":"+PUERTO+"/Smart_Meter/ws_Procesar?WSDL", map, this, (Asynchtask) this);
             dd.setMethod_name("cerrar");
             dd.execute();
         }
