@@ -9,23 +9,18 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="MAC"/>
+        android:text="dispositivo"/>
     <TextView android:id="@+id/LblObs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="normal"
         android:textSize="12sp"
-        android:text="Observacion"/>
+        android:text="fecha"/>
     <TextView android:id="@+id/Lblfecha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="normal"
         android:textSize="12sp"
-        android:text="fecha"/>
-    <TextView android:id="@+id/LblMedida"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="normal"
-        android:textSize="12sp"
-        android:text="Medida"/>
+        android:text="consumo"/>
+
 </LinearLayout>

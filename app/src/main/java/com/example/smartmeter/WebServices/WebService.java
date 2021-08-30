@@ -22,7 +22,7 @@ public class WebService extends AsyncTask<String, Long, String> {
 
     //private String url= "http://"+IP_SERVIDOR+":8080/Smart_Meter_WS/";
 
-    private String url= "https://aplicaciones.uteq.edu.ec/Smart_Meter/";
+    private String url= "http://"+IP_SERVIDOR+":8080/Smart_Meter_WS/";
 
     //Actividad para mostrar el cuadro de progreso
     private Context actividad;

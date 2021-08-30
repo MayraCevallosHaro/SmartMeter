@@ -7,26 +7,16 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class ReporteConsumo {
-    private String Usuario;
-    private String mac;
-    private String  Observacion;
-    private String  fecha;
-    private String  medida;
+    private String dispositivo;
+    private String fecha;
+    private String  consumo;
 
-    public String getMac() {
-        return mac;
+    public String getDispositivo() {
+        return dispositivo;
     }
 
-    public void setMac(String mac) {
-        this.mac = mac;
-    }
-
-    public String getObservacion() {
-        return Observacion;
-    }
-
-    public void setObservacion(String observacion) {
-        Observacion = observacion;
+    public void setDispositivo(String dispositivo) {
+        this.dispositivo = dispositivo;
     }
 
     public String getFecha() {
@@ -37,28 +27,19 @@ public class ReporteConsumo {
         this.fecha = fecha;
     }
 
-    public String getMedida() {
-        return medida;
+    public String getConsumo() {
+        return consumo;
     }
 
-    public void setMedida(String medida) {
-        this.medida = medida;
-    }
-
-    public String getUsuario() {
-        return Usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        Usuario = usuario;
+    public void setConsumo(String consumo) {
+        this.consumo = consumo;
     }
 
     public ReporteConsumo(JSONObject a) throws JSONException {
-        Usuario= a.getString("Usuario").toString();
-        mac = a.getString("MAC").toString();
-        Observacion = a.getString("Observacion").toString();
+        dispositivo= a.getString("dispositivo").toString();
         fecha = a.getString("fecha").toString();
-        medida = a.getString("medida").toString();
+        consumo = a.getString("consumo").toString();
+
 
     }
     public static ArrayList<ReporteConsumo> JsonObjectsBuild(JSONArray datos) throws JSONException {

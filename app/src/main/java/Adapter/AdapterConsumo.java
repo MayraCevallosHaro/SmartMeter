@@ -24,12 +24,11 @@ public class AdapterConsumo extends ArrayAdapter<ReporteConsumo> {
         TextView lblMac = (TextView)item.findViewById(R.id.LblMac);
         TextView lblObs = (TextView)item.findViewById(R.id.LblObs);
         TextView Lblfecha = (TextView)item.findViewById(R.id.Lblfecha);
-        TextView LblMedida = (TextView)item.findViewById(R.id.LblMedida);
 
-        lblMac.setText(getItem(position).getMac());
-        lblObs.setText(getItem(position).getObservacion());
-        Lblfecha.setText(getItem(position).getFecha());
-        LblMedida.setText(getItem(position).getMedida());
+
+        lblMac.setText(getItem(position).getConsumo());
+        lblObs.setText(getItem(position).getFecha());
+        Lblfecha.setText(getItem(position).getConsumo());
         return(item);
     }
 

@@ -24,7 +24,7 @@ public class SOAPWork extends AsyncTask<String,Long,String> {
     private Map<String, byte[]> datos2;
     //Url del servicio web
    // private String url= "http://192.168.100.5:8080/Smart_Meter_WS/";
-    private String url= "http://190.15.134.7/Smart_Meter/";
+    private String url= "http://192.168.100.5:8080/Smart_Meter_WS/";
 
 
     //Actividad para mostrar el cuadro de progreso

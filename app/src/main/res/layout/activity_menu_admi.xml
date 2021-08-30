@@ -43,7 +43,7 @@
 
         android:scrollbarThumbVertical="@drawable/admin_settings_male_60px"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.983"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageButton7"
         app:layout_constraintTop_toBottomOf="@+id/textView17"
         app:srcCompat="@drawable/close_window_60px"
@@ -62,26 +62,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.753"
         app:layout_constraintStart_toEndOf="@+id/textView22"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="468dp" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="169dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="581dp"
-        android:gravity="center"
-        android:text="Exit Smart Meter application"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/id_titulo6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
-        app:layout_constraintStart_toEndOf="@+id/textView23"
-        app:layout_constraintTop_toBottomOf="@+id/textView24"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCerrar2"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView21"
@@ -272,6 +254,22 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12"
         app:srcCompat="@drawable/energy_window_60px"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="169dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:text="Exit Smart Meter application"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/id_titulo6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.673"
+        app:layout_constraintStart_toEndOf="@+id/textView23"
+        app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
     <TextView
         android:id="@+id/textView22"

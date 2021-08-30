@@ -10,6 +10,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.fonts.FontFamily;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -24,6 +25,7 @@ import com.example.smartmeter.WSSoap.SOAPWork;
 import com.example.smartmeter.WebServices.Asynchtask;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
+import com.lowagie.text.Font;
 import com.lowagie.text.Paragraph;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
@@ -97,19 +99,16 @@ public class report_power extends AppCompatActivity implements Asynchtask{
             PdfWriter writer = PdfWriter.getInstance(documento, ficheroPDF);
 
             documento.open();
-
-            documento.add(new Paragraph("TABLA \n\n"));
-            documento.add(new Paragraph( "Reporte de consumo\n\n"));
+            documento.add(new Paragraph("Smart Meter \n\n"));
+            documento.add(new Paragraph( "Consumo Diario\n\n"));
 
             // Insertamos una tabla
-            PdfPTable tabla = new PdfPTable(5);
+            PdfPTable tabla = new PdfPTable(3);
             for (int i = 0; i < JSONlistaConsumo.length(); i++) {
                 JSONObject object = JSONlistaConsumo.getJSONObject(i);
-                tabla.addCell(object.getString("Usuario"));
-                tabla.addCell(object.getString("MAC"));
-                tabla.addCell(object.getString("Observacion"));
+                tabla.addCell(object.getString("dispositivo"));
                 tabla.addCell(object.getString("fecha"));
-                tabla.addCell(object.getString("medida"));
+                tabla.addCell(object.getString("consumo"));
             }
             documento.add(tabla);
             documento.close();
@@ -155,15 +154,10 @@ public class report_power extends AppCompatActivity implements Asynchtask{
         Map<String, String> map = new LinkedHashMap<>();
         try
         {
-            map.put("sentencia", "SELECT nombres || ' ' || apellidos as Usuario,\n" +
-                    "\t\t\"MAC\", \n" +
-                    "\t\t\"Observacion\", \n" +
-                    "\t\tfecha, \n" +
-                    "\t\tmedida\n" +
-                    "\tFROM consumo  \n" +
-                    "\tinner join usuario \n" +
-                    "\ton usuario.id_usuario = consumo.id_usuario\n" +
-                    "\twhere usuario.id_usuario=" + id);
+            map.put("sentencia", "select d.dispositivo, c.fecha, SUM(c.medida) as Consumo " +
+                    "from consumo as c inner join dispositivo as d ON c.id_dispositivo = d.id_dispositivo " +
+                    "where d.id_usuario =" + id +
+                    "group by c.fecha, d.dispositivo");
 
             SOAPWork dd = new SOAPWork("http://"+IP_SERVIDOR+":"+PUERTO+"/Smart_Meter_WS/ws_Procesar?WSDL", map, this, (Asynchtask) this);
             dd.setMethod_name("ConsumoUsuario");

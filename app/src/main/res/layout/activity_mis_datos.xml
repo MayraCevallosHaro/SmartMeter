@@ -218,7 +218,7 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Cédula :"
-        android:inputType="text"
+        android:inputType="number"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
